@@ -5,7 +5,7 @@ A simple Spring Boot project with JWT-based authentication and role-based author
 ## Entities
 
 - **User**  
-  - Handles authentication: `register`, `login`, `refresh token`.
+  - Handles authentication: `register`, `login`, `refresh token`, `logout`.
   - Roles: `USER`, `ADMIN`.
 
 - **Product**  
@@ -27,6 +27,7 @@ A simple Spring Boot project with JWT-based authentication and role-based author
 - `POST /api/auth/register` – register a new user.  
 - `POST /api/auth/login` – login and receive JWT token.  
 - `POST /api/auth/refresh` – refresh JWT token.  
+- `POST /api/auth/logout` – logout user (invalidate token).  
 
 ### Products
 
@@ -42,3 +43,4 @@ A simple Spring Boot project with JWT-based authentication and role-based author
 1. Clone the repository  
 ```bash
 git clone <repo-url>
+
