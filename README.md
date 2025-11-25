@@ -34,7 +34,7 @@ A simple Spring Boot project with JWT-based authentication and role-based author
 - `GET /api/products/all` – get all products (`USER` and `ADMIN`).  
 - `GET /api/products/{id}` – get one product (`USER` and `ADMIN`).  
 - `POST /api/products` – create a product (`ADMIN` only).  
-- `PATCH /api/products/{id}/buy` – buy a product (`USER` only).  
+- `PATCH /api/products/{id}/buy` – buy a product (`USER` and `ADMIN`).  
 - `PUT /api/products/{id}` – update a product (`ADMIN` only).  
 - `DELETE /api/products/{id}` – delete a product (`ADMIN` only).
 
