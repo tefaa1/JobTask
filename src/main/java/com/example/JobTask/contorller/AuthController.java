@@ -11,9 +11,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -22,6 +20,7 @@ public class AuthController {
 
     private final AuthService authService;
 
+    @GetMapping("/login")
     public ResponseEntity<?>login(@Valid @RequestBody LoginRequestDTO loginDTO,
                                      HttpServletResponse response){
 
@@ -40,12 +39,14 @@ public class AuthController {
         return ResponseEntity.ok().build();
     }
 
+    @PostMapping("/register")
     public ResponseEntity<?>register(@Valid @RequestBody RegisterRequestDTO requestDTO){
 
         authService.register(requestDTO);
         return ResponseEntity.ok().build();
     }
 
+    @PostMapping("/refresh")
     public ResponseEntity<?>refresh(HttpServletRequest request,
                                     HttpServletResponse response){
 
@@ -68,6 +69,18 @@ public class AuthController {
         String newAccessToken = authService.refresh(refreshToken);
 
         response.setHeader("Authorization","Bearer "+newAccessToken);
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<?> logout(HttpServletResponse response) {
+
+        Cookie refreshTokenCookie = new Cookie("refreshToken", null);
+        refreshTokenCookie.setHttpOnly(true);
+        refreshTokenCookie.setPath("/");
+        refreshTokenCookie.setMaxAge(0);
+        response.addCookie(refreshTokenCookie);
+
         return ResponseEntity.ok().build();
     }
 }

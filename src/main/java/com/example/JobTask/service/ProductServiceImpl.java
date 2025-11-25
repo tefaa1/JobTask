@@ -78,7 +78,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional
-    public ProductResponseDTO buyProductById(BuyProductRequestDTO buyProductRequestDTO) {
+    public ProductResponseDTO buyProduct(BuyProductRequestDTO buyProductRequestDTO) {
 
         Long id = buyProductRequestDTO.getId();
         Product product = productRepository.findById(id)
