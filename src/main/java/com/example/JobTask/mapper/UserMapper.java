@@ -2,7 +2,6 @@ package com.example.JobTask.mapper;
 
 import com.example.JobTask.dto.user.RegisterRequestDTO;
 import com.example.JobTask.entity.User;
-import com.example.JobTask.enums.Role;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
