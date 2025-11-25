@@ -20,5 +20,5 @@ public class BuyProductRequestDTO {
 
     @NotNull
     @PositiveOrZero
-    private Long MoneyYouHave;
+    private Long moneyYouHave;
 }
