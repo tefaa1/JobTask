@@ -42,5 +42,5 @@ A simple Spring Boot project with JWT-based authentication and role-based author
 
 1. Clone the repository  
 ```bash
-git clone <repo-url>
+git clone https://github.com/tefaa1/JobTask
 
