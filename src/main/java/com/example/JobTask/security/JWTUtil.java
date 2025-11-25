@@ -38,7 +38,7 @@ public class JWTUtil {
                 .compact();
     }
 
-    private String generateRefreshToken(String email){
+    public String generateRefreshToken(String email){
 
         return Jwts.builder()
                 .setSubject("refresh")
