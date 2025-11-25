@@ -1,7 +1,5 @@
 package com.example.JobTask.dto.product;
 
-
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
@@ -11,18 +9,16 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductRequestDTO {
+public class BuyProductRequestDTO {
 
-    @NotBlank
-    private String name;
-
-    private String description;
+    @NotNull
+    private Long id;
 
     @NotNull
     @PositiveOrZero
-    private Long price;
+    private Long quantity;
 
     @NotNull
     @PositiveOrZero
-    private Long stockQuantity;
+    private Long MoneyYouHave;
 }

@@ -26,4 +26,8 @@ public class Product {
 
     @Column(nullable = false)
     private Long stockQuantity;
+
+    public void reduceStockQuantity(Long quantity) {
+        stockQuantity -= quantity;
+    }
 }
